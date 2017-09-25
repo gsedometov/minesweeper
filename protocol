@@ -1,0 +1,14 @@
+Cell = 
+    Int # количество мин 
+    | 'X' # закрытая клетка
+    | 'M' # мина
+
+Board = 2dArray[Cell, (rows, columns)]
+
+TurnResult = 
+    'Success' # клетка успешно открылась
+    | 'You win' # открыта последняя незаминированная клетка
+    | 'Game over' # открыта клетка с миной
+
+Request = {"x": Int, "y": Int} # нумерация от левого верхнего угла
+Response = {"result": TurnResult, "board": Board}
